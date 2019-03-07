@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CluedinLibrary;
+using CluedInLibrary;
 
 namespace CluedInWPF
 {
@@ -23,6 +25,19 @@ namespace CluedInWPF
         public MainWindow()
         {
             InitializeComponent();
+            APIHelper.InitializeClient();
         }
+
+        private async void GetData_Click(object sender, RoutedEventArgs e)
+        {
+            var companies = await DataProcessor.GetData();
+
+            foreach (var company in companies)
+            {
+                CompanyListing.Items.Add(company);
+            }
+
+        }
+
     }
 }

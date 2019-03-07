@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CluedInWPF"
         mc:Ignorable="d"
-        Title="Rest API Test" Height="450" Width="800" >
+        Title="CluedIn API Test" Height="357" Width="450" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Button x:Name="GetData" Content="Get Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="46,28,0,0" Click="GetData_Click"/>
+
+        <ListBox x:Name="CompanyListing" HorizontalAlignment="Left" Height="245" VerticalAlignment="Top" Width="384" Margin="46,67,0,0"/>
+
     </Grid>
 </Window>
