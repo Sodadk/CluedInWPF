@@ -9,11 +9,9 @@ namespace CluedInLibrary
 {
     public class DataProcessor
     {
-        public static async Task<List<CompanyModel>> GetCompanies(int value = 0)
+        public static async Task<List<CompanyModel>> GetCompanies()
         {
-            string url = "";
-
-            url = value > 0 ? $"https://cluedintestapi.herokuapp.com/api/companies/{value}" : "https://cluedintestapi.herokuapp.com/api/companies";
+            string url = $"https://cluedintestapi.herokuapp.com/api/companies";
 
             using (var response = await APIHelper.ApiClient.GetAsync(url))
             {
@@ -45,7 +43,6 @@ namespace CluedInLibrary
                     throw new Exception(response.ReasonPhrase);
                 }
             }
-
         }
 
         public static async Task<List<CompanyEmployeeModel>> GetEmployeesByCompanyId(int id)

@@ -247,7 +247,7 @@ namespace CluedInConsole
                     CompanyCustomers = await DataProcessor.GetCustomersByCompanyId(choice),
                     CompanyEmployees = await DataProcessor.GetEmployeesByCompanyId(choice)
                 };
-//                Thread.Sleep(250);
+
                 await Task.Delay(250);
 
                 Console.WriteLine("");
